@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+from operations import Operations
+from auth.models import User

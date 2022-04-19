@@ -1,4 +1,3 @@
 from django.db import models
-
-from operations import Operations
-from auth.models import User
+from calculator.operations.operations import Operations
+from calculator.authentication.models import User

@@ -23,12 +23,11 @@ class OperationType:
 class OperationHistory(models.Model):
     """Record operations in the database."""
 
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         Profile, verbose_name="Usuário", on_delete=models.PROTECT
     )
-    values = models.JSONField(
-        verbose_name='valores', help_text="Valores para efetuar a operação."
-    )
+    values_a = models.IntegerField()
+    values_b = models.IntegerField()
     operation_type = models.CharField(
         verbose_name='Tipo de operação',
         default=OperationType.ADD,

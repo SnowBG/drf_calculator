@@ -22,11 +22,18 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from calculator.operations import views
+
 router = DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path(
+        'operation/',
+        views.OperationsInputSerializer,
+        name='operation',
+    ),
     path('', include(router.urls)),
 ]

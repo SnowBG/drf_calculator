@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+
+from calculator.operations.models import OperationHistory
+
+admin.site.register(OperationHistory)

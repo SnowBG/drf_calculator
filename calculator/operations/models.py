@@ -1,7 +1,7 @@
 """Models to implement the operations records."""
 from django.db import models
 from calculator.operations.operations import Operations
-from calculator.authentication.models import User
+from calculator.authentication.models import Profile
 
 
 class OperationType:
@@ -24,7 +24,7 @@ class OperationHistory(models.Model):
     """Record operations in the database."""
 
     user = models.OneToOneField(
-        User, verbose_name="Usuário", on_delete=models.PROTECT
+        Profile, verbose_name="Usuário", on_delete=models.PROTECT
     )
     values = models.JSONField(
         verbose_name='valores', help_text="Valores para efetuar a operação."

@@ -34,6 +34,9 @@ class OperationHistory(models.Model):
         default=OperationType.ADD,
         null=False,
         choices=OperationType.CHOICE,
+        max_length=20,
     )
     result = models.IntegerField(verbose_name='resultado')
-    created_at = models.DateTimeField(verbose_name='criado em', editable=False)
+    created_at = models.DateTimeField(
+        verbose_name='criado em', editable=False, auto_now_add=True
+    )
